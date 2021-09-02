@@ -1,10 +1,14 @@
-let nombre = prompt("Ingrese su nombre:");
-let apellido = prompt("Ingrese su apellido:");
-let edad = prompt ("Ingrese su edad:");
+let contador = 0;
+let numero = 0;
 
-if(parseInt(edad)<18){
-    alert("Hola " + nombre + " " + apellido + ", debes consultar con un mayor para acceder a este sitio.");
-} 
-else{
-    alert("Hola " + nombre + " " + apellido + ", eres mayor de edad.");
+do {
+    contador ++;
+    console.log("Intento número: " + contador);
+    numero = prompt ("Ingrese el número ganador:");
+} while (numero != 9);
+
+if(contador<4){
+    alert("Acertaste el número ganador luego de:" + contador + "intentos. Eres un ganador");
+}else{
+    alert("Acertaste el número ganador luego de: " + contador + " intentos. No lograste ganar.");
 }
