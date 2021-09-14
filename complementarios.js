@@ -1,47 +1,25 @@
-let tipoAConvertir = 0;
-let cantPesos = 0;
-let moneda = "";
-let resultado = 0;
-
-function preguntartipoAConvertir(){
-    return tipoAConvertir = parseInt(prompt(
-        "Ingrese el tipo de Moneda que desea obtener: \n" +
-        "1 = Dolar \n" +
-        "2 = Euro \n" +
-        "3 = Yen \n"
-    ));
-}
-
-function tipoDeMoneda(tipoAConvertir){
-    switch(tipoAConvertir){
-        case 1:
-            return moneda = "Dolar";
-        case 2:
-            return moneda = "Euro";
-        case 3:
-            return moneda = "Yen";
+class Fotocopiadora {
+    constructor(marca,modelo,estado,stock,precio){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.estado = estado;
+        this.stock = stock;
+        this.precio = precio;
     }
 }
 
-function preguntarCantPesos(moneda){
-    return cantPesos= parseFloat(prompt("Ingrese la cantidad de Pesos que desea convertir a " + moneda + ":"));
+const fotocopiadoras = [];
+
+fotocopiadoras.push(new Fotocopiadora("Ricoh","2022","Usada",0,5000));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","5002","Nueva",5,8000));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","4500","Nueva",2,3050));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","4500","Nueva",2,8900));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","4500","Nueva",2,100000));
+
+fotocopiadoras.sort(function mayorMenor(a, b){
+    return b.precio - a.precio;
+});
+
+for (const fotocopiadora of fotocopiadoras) {
+    console.log(fotocopiadora);
 }
-
-function convertir(tipoAConvertir,cantPesos){
-    switch(tipoAConvertir){
-        case 1:
-            resultado = cantPesos * 103.52;
-            break;
-        case 2:
-            resultado = cantPesos * 116.29;
-            break;
-        case 3:
-            resultado = cantPesos * 0.89;
-        }
-    alert(cantPesos + " Pesos Argentinos equivalen a " + resultado.toFixed(2) + " " + moneda);
-}
-
-preguntartipoAConvertir();
-preguntarCantPesos(tipoDeMoneda(tipoAConvertir));
-convertir(tipoAConvertir,cantPesos);
-

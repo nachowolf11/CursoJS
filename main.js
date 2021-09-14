@@ -1,5 +1,3 @@
-
-
 class Fotocopiadora {
     constructor(marca,modelo,estado,stock){
         this.marca = marca;
@@ -17,35 +15,48 @@ class Fotocopiadora {
     }
 }
 
-const fotocopiadora1 = new Fotocopiadora("Ricoh","5002","Nueva",5);
-const fotocopiadora2 = new Fotocopiadora("Ricoh","2022","Usada",0);
-const fotocopiadora3 = new Fotocopiadora("Ricoh","4500","Nueva",2);
+const fotocopiadoras = [];
+
+fotocopiadoras.push(new Fotocopiadora("Ricoh","2022","Usada",0));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","5002","Nueva",5));
+fotocopiadoras.push(new Fotocopiadora("Ricoh","4500","Nueva",2));
+
+function mostrar(){
+    do {
+        for (const fotocopiadora of fotocopiadoras) {
+            alert(fotocopiadora.marca + " " + fotocopiadora.modelo);
+        }
+        repetir = parseInt(prompt("Ingrese 1 para volver a ver el listado o 0 para comprar un producto: "));
+    } while (repetir == 1);
+}
 
 function consultar(){
-    return tipo = parseInt(prompt(
-        "Ingrese que fotocopiadora desea comprar: \n" +
-        "1: " + fotocopiadora1.marca + " " + fotocopiadora1.modelo + "\n" +
-        "2: " + fotocopiadora2.marca + " " + fotocopiadora2.modelo + "\n" +
-        "3: " + fotocopiadora3.marca + " " + fotocopiadora3.modelo + "\n"
-    ));
+    return 
 }
 
-function seleccionarVender (tipo){
-    switch(tipo){
-        case 1:
-            fotocopiadora1.vender();
-            break;
-        case 2:
-            fotocopiadora2.vender();
-            break;
-        case 3:
-            fotocopiadora3.vender();
-            break;
-    }
+function consultarVender (codigo,contador){
+    do {
+        codigo = parseInt(prompt("Ingrese el código numérico de la fotocopiadora que desea comprar:"));
+        contador = 0;
+        for (const fotocopiadora of fotocopiadoras) {
+            if (fotocopiadora.modelo == codigo) {
+                fotocopiadora.vender();
+            }else{
+                contador ++;
+            }
+        }
+        if (contador == 3) {
+            alert("El modelo ingresado no existe, intente nuevamente.");
+        }
+    } while (contador == 3);
 }
 
-let tipo = 0;
+let codigo = 0;
+let repetir = 0;
+let contador = 0;
 
-tipo = consultar();
+alert("Bienvenido a nuestro simulador. A continuación, podrá visualizar el listado de fotocopiadoras.");
 
-seleccionarVender(tipo);
+mostrar();
+
+consultarVender(codigo);
