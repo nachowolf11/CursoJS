@@ -1,0 +1,149 @@
+html{
+   font-size: 62.5%;
+}
+$fontSizeNav:2rem;
+$navbar-toggler-font-size:$fontSizeNav;
+
+$navbarHoverColor:  #e13b4ce2;
+$navbarActiveColor:  #dc3545;
+
+$navbar-light-active-color: $navbarActiveColor;
+$navbar-light-hover-color: $navbarHoverColor;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+div{
+   //border: black 1px solid;
+}
+
+.logo{
+   width: 150px;
+   height: 50px;
+}
+
+nav{
+   font-size: 1.8rem;
+}
+
+h1{
+   text-align: center;
+   font-size: 9.5rem;
+   font-family: 'Bebas Neue', cursive;
+}
+
+h3{
+   font-size: 2.5rem;
+   font-family: 'Bebas Neue', cursive;
+}
+
+p{
+   text-align: justify;
+   font-size: 1.6rem;
+   font-family: 'Noto Sans KR', sans-serif;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+form{
+   label{
+      font-size: 1.6rem;
+   }
+}
+
+section{
+   min-height: calc(100vh - 91.25px - 500px);
+   @media (min-width:768px){
+      min-height: calc(100vh - 91.25px - 250px);
+   }
+}
+
+footer{
+   padding-top: 25px;
+   height: 500px;
+   @media (min-width:768px){
+      height: 250px;
+   }
+   div{
+      text-align: center;
+      span{
+         font-size: 1.6rem;
+         font-family: 'Noto Sans KR', sans-serif;
+      }
+      img{
+         height: 50px; 
+         width: 50px;
+         margin: 20px;
+      }
+   }
+}
+
+.btn{
+   font-size: 1.6rem;
+}
+
+.header__div--span{
+   font-size: 1.4rem;
+   div{
+      padding: 2px;
+      img{
+         margin-right: 5px;
+      }
+   }
+}
+
+.section__div--titulos{
+   height: 350px;
+   position: relative;
+   @media (min-width:767px){
+      height: 250px;
+   }
+}
+
+.contacto__section--sizes{
+   position: relative;
+   height: 920px;
+   @media (min-width:767px){
+      height: 780px;
+   }
+}
+
+.custom-shape-divider-bottom-1630798550 {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   overflow: hidden;
+   line-height: 0;
+   transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1630798550 svg {
+   position: relative;
+   display: block;
+   width: calc(145% + 1.3px);
+   height: 76px;
+}
+
+.custom-shape-divider-bottom-1630798550 .shape-fill {
+   fill: #FFFFFF;
+}
+
+.custom-shape-divider-bottom-1630798550 .shape-fill2 {
+   fill: $red;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+   .custom-shape-divider-bottom-1630798550 svg {
+       width: calc(145% + 1.3px);
+       height: 52px;
+   }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+   .custom-shape-divider-bottom-1630798550 svg {
+       width: calc(149% + 1.3px);
+       height: 61px;
+   }
+}
