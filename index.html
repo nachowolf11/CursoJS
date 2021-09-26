@@ -46,7 +46,34 @@
         </div>
       </nav>
     </header>
-    <section id="section"></section>
+    <section id="section" class="row row justify-content-center">
+      <div class="col-11 col-lg-9 col-xl-7">
+        <form id="registro" class="row g-3" action="correo.php" method="POST">
+          <div class="col-md-6">
+            <label for="marca" class="form-label">Marca</label>
+            <input type="text" class="form-control form-control-lg crearFotocopiadora" required id="marca">
+          </div>
+          <div class="col-md-6">
+            <label for="modelo" class="form-label">Modelo</label>
+            <input type="text" class="form-control form-control-lg crearFotocopiadora" required id="modelo">
+          </div>
+          <div class="col-md-6">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="number" class="form-control form-control-lg crearFotocopiadora" required id="stock">
+          </div>
+          <div class="col-md-6">
+            <label for="estado" class="form-label">Estado</label>
+            <select class="form-select form-select-lg mb-3 crearFotocopiadora" aria-label=".form-select-lg example">
+              <option value="Nueva">Nueva</option>
+              <option value="Usada">Usada</option>
+            </select>
+          </div>
+          <div class="col-12 pt-4">
+            <button type="submit" class="btn btn-outline-danger btn-lg rounded-pill">Enviar consulta</button>
+          </div>
+        </form>
+    </div>
+    </section>
     <footer class="row bg-danger">
       <div class="col-md-4">
         <img src="imagenes/iconos/whatsapp.svg" alt="whatsapp">

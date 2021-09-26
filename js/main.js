@@ -1,9 +1,9 @@
 class Fotocopiadora {
-    constructor(marca,modelo,estado,stock){
+    constructor(marca,modelo,stock,estado){
         this.marca = marca;
         this.modelo = modelo;
-        this.estado = estado;
         this.stock = stock;
+        this.estado = estado;
     }
     vender(){
         if(this.stock > 0){
@@ -14,52 +14,22 @@ class Fotocopiadora {
         }
     }
 }
-
-function pideStock() {
-    stock = parseInt(prompt("Stock: "));
-    while (isNaN(stock)) {
-        alert("No ingreso un número.");
-        stock = parseInt(prompt("Stock: "));
-    }
-    return stock
-}
-
-function pideEstado() {
-    estado = prompt("Estado: ");
-    while (estado.toUpperCase() != "NUEVO" && estado.toUpperCase() != "USADO") {
-        alert("Estados posibles: Nuevo / Usado.");
-        estado = prompt("Estado: ");
-    }
-    return estado.toUpperCase()
-}
-
-function crearFotocopiadora(fotocopiadoras) {
-    fotocopiadoras.push(new Fotocopiadora(prompt("Marca: ").toUpperCase(),prompt("Modelo: "),pideEstado(),pideStock()));
-}
-
 const fotocopiadoras = [];
-let continuar = "";
-
-if (fotocopiadoras.length == 0) {
-    alert("Actualmente no se encuentra cargada ninguna fotocopiadora.");
-    crearFotocopiadora(fotocopiadoras);
-}
-
-continuar = prompt("¿Desea ingresar una nueva fotocopiadora? \n" + "(Ingrese 'si' para continuar con la carga.)");
-
-while (continuar.toUpperCase() == "SI") {
-    crearFotocopiadora(fotocopiadoras);
-    continuar = prompt("¿Desea ingresar una nueva fotocopiadora? \n" + "(Ingrese 'si' para continuar con la carga.)");
-}
 
 const section = document.getElementById("section");
+let crearRegistro = document.getElementById("registro");
+crearRegistro.addEventListener("submit",crearFotocopiadora);
 
-for (const fotocopiadora of fotocopiadoras) {
+function crearFotocopiadora(event) {
+    event.preventDefault();
+    const inputs = document.getElementsByClassName("crearFotocopiadora");
+    fotocopiadoras.push(new Fotocopiadora(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value));
+    console.log(fotocopiadoras);
     let div = document.createElement("div");
-    div.innerHTML = `<h3> Marca: ${fotocopiadora.marca}</h3>
-                            <h3> Modelo: ${fotocopiadora.modelo}</h3>
-                            <h3> Estado: ${fotocopiadora.estado}</h3>
-                            <h3> Stock: ${fotocopiadora.stock}</h3>
+    div.innerHTML = `<h3> Marca: ${inputs[0].value}</h3>
+                            <h3> Modelo: ${inputs[1].value}</h3>
+                            <h3> Estado: ${inputs[2].value}</h3>
+                            <h3> Stock: ${inputs[3].value}</h3>
                             <br>`;
     section.appendChild(div);
 }
