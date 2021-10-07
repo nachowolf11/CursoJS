@@ -50,6 +50,13 @@ form{
    }
 }
 
+#contenedorCards{
+   @media (max-width:768px){
+      display: flexbox;
+      justify-content: center;
+   }
+}
+
 section{
    min-height: calc(100vh - 91.25px - 500px);
    @media (min-width:768px){

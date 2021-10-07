@@ -1,0 +1,2 @@
+const fotocopiadoras = [];
+const carrito = [];

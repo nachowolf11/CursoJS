@@ -1,63 +1,17 @@
-class Fotocopiadora {
-    constructor(marca,modelo,stock,estado){
-        this.marca = marca;
-        this.modelo = modelo;
-        this.stock = stock;
-        this.estado = estado;
-    }
-    vender(){
-        if(this.stock > 0){
-            this.stock -= 1;
-            alert(this.marca + " " + this.modelo + " se añadio al carrito de compras.");
-        }else{
-            alert("No hay stock de: " + this.marca + " " + this.modelo);
-        }
-    }
-}
+//CREO OBJETOS
+fotocopiadoras.push(new Fotocopiadora(1,"RICOH","4500",3,"Nueva",50000));
+fotocopiadoras.push(new Fotocopiadora(2,"RICOH","450",3,"Nueva",30000));
+fotocopiadoras.push(new Fotocopiadora(3,"RICOH","5500",3,"Nueva",100000));
+fotocopiadoras.push(new Fotocopiadora(4,"RICOH","500",3,"Nueva",10000));
+fotocopiadoras.push(new Fotocopiadora(5,"RICOH","5000",3,"Nueva",40000));
+fotocopiadoras.push(new Fotocopiadora(6,"RICOH","650",3,"Nueva",60000));
+fotocopiadoras.push(new Fotocopiadora(7,"RICOH","450",3,"Nueva",600000));
+fotocopiadoras.push(new Fotocopiadora(8,"RICOH","4000",3,"Nueva",120000));
 
-function setFotocopiadora(fotocopiadoras) {
-    localStorage.setItem("fotocopiadoras",JSON.stringify(fotocopiadoras));
-}
+//IMPRIMO ESOS OBJETOS
 
-function imprimirFotocopiadora(fotocopiadoras) {
-    for (const fotocopiadora of fotocopiadoras) {
-        let div = document.createElement("div");
-        div.innerHTML = `<h3> Marca: ${fotocopiadora.marca}</h3>
-                            <h3> Modelo: ${fotocopiadora.modelo}</h3>
-                            <h3> Estado: ${fotocopiadora.stock}</h3>
-                            <h3> Stock: ${fotocopiadora.estado}</h3>
-                            <br>`;
-        section.appendChild(div);   
-    }
-}
+fotocopiadorasUI(fotocopiadoras,"#contenedorCards");
 
-function crearFotocopiadora(event) {
-    event.preventDefault();
-    const inputs = document.getElementsByClassName("crearFotocopiadora");
-    fotocopiadoras.push(new Fotocopiadora(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value));
-    let div = document.createElement("div");
-    div.innerHTML = `<h3> Marca: ${inputs[0].value}</h3>
-                            <h3> Modelo: ${inputs[1].value}</h3>
-                            <h3> Estado: ${inputs[2].value}</h3>
-                            <h3> Stock: ${inputs[3].value}</h3>
-                            <br>`;
-    section.appendChild(div);
-    setFotocopiadora(fotocopiadoras);
-}
+//AGREGO FUNCIONALIDAD AL BOTON COMPRAR
 
-
-const section = document.getElementById("section");
-let crearRegistro = document.getElementById("registro");
-
-const almacenados = JSON.parse(localStorage.getItem("fotocopiadoras"));
-const fotocopiadoras = [];
-
-if (localStorage.length != 0) {
-    for (const objeto of almacenados) {
-        fotocopiadoras.push(new Fotocopiadora(objeto.marca,objeto.modelo,objeto.stock,objeto.estado));
-    }
-    imprimirFotocopiadora(fotocopiadoras); 
-}
-
-crearRegistro.addEventListener("submit",crearFotocopiadora);
-
+$ (".btnCompra").click(comprarFotocopiadora);

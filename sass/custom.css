@@ -11992,6 +11992,15 @@ form label {
   font-size: 1.6rem;
 }
 
+@media (max-width: 768px) {
+  #contenedorCards {
+    display: flexbox;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 section {
   min-height: calc(100vh - 91.25px - 500px);
 }
