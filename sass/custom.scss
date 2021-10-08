@@ -12,8 +12,28 @@ $navbar-light-hover-color: $navbarHoverColor;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-div{
-   //border: black 1px solid;
+//div{}
+
+ul{
+   list-style: none;
+}
+
+.listaFiltros{
+   font-size: 1.6rem;
+   font-family: 'Noto Sans KR', sans-serif;
+   margin-top: 4rem;
+   li{
+      margin-top: 1rem;
+   }
+}
+
+.carrito{
+   button{
+      width: 250px;
+   }
+   ul{
+      font-size: 1.2rem;
+   }
 }
 
 .logo{

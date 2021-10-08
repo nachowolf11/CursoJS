@@ -1,11 +1,12 @@
 class Fotocopiadora {
-    constructor(id,marca,modelo,stock,estado,precio){
+    constructor(id,tipo,nombre,stock,estado,precio,img){
         this.id = parseInt(id);
-        this.marca = marca;
-        this.modelo = modelo;
+        this.tipo = tipo;
+        this.nombre = nombre;
         this.stock = stock;
         this.estado = estado;
         this.precio = parseFloat(precio);
+        this.img = img;
         this.cantidad = 1;
     }
     agregarCantidad(valor){

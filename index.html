@@ -50,13 +50,35 @@
       </nav>
     </header>
     <section class="row">
-      <div class="col-md-4">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="col-md-4 d-flex flex-column align-items-center">
+        <div class="dropdown carrito">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             CARRITO <span id="carritoCantidad" class="badge badge-light">0</span>
           </button>
           <ul id="carritoFotocopiadoras" class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
             <!--ACA SE GENERAN LAS FOTOCOPIADORAS DEL CARRITO-->
+          </ul>
+        </div>
+        <div>
+          <ul class="listaFiltros">
+            <li>
+              <input class="form-check-input" name="filtro" type="checkbox" value="fotocopiadora" id="fotocopiadoras">
+              <label class="form-check-label" for="fotocopiadoras">Fotocopiadoras</label>
+            </li>
+            <li>
+              <input class="form-check-input" name="filtro" type="checkbox" value="repuesto" id="repuestos">
+              <label class="form-check-label" for="repuestos">Repuestos</label>
+            </li>
+            <!---FUTUROS FILTROS
+              <input class="form-check-input" name="filtro" type="checkbox" value="nuevo" id="nuevos">
+              <label class="form-check-label" for="nuevos">Nuevos</label>
+            </li>
+            <li>
+              <input class="form-check-input" name="filtro" type="checkbox" value="usado" id="usados">
+              <label class="form-check-label" for="usados">Usados</label>
+            -->
+            <li>
+            </li>
           </ul>
         </div>
       </div>
@@ -82,7 +104,7 @@
         <span>Lunes a Viernes de 8:30 a 17:30</span>
       </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="js/globales.js"></script>
     <script src="js/funciones.js"></script>
     <script src="js/producto.js"></script>

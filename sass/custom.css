@@ -11960,6 +11960,28 @@ fieldset:disabled .btn {
   }
 }
 
+ul {
+  list-style: none;
+}
+
+.listaFiltros {
+  font-size: 1.6rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 4rem;
+}
+
+.listaFiltros li {
+  margin-top: 1rem;
+}
+
+.carrito button {
+  width: 250px;
+}
+
+.carrito ul {
+  font-size: 1.2rem;
+}
+
 .logo {
   width: 150px;
   height: 50px;
