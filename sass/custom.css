@@ -11975,11 +11975,27 @@ ul {
 }
 
 .carrito button {
-  width: 250px;
+  width: 280px;
 }
 
 .carrito ul {
   font-size: 1.2rem;
+}
+
+.carrito ul li {
+  margin-left: 1rem;
+}
+
+.carrito ul li span {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carrito ul button {
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .logo {

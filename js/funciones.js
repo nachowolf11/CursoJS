@@ -1,3 +1,8 @@
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
 //IMPRIME LOS OBJETOS
 function fotocopiadorasUI(fotocopiadoras,id) {
     for (const fotocopiadora of fotocopiadoras) {
@@ -44,6 +49,16 @@ function carritoUI(carrito) {
             `
         )
     }
+    $("#carritoFotocopiadoras").append(`<button type="button" id="btnConfirmar" class="btn btn-danger" data-bs-toggle="popover" title="¡Operacion exitosa!" data-bs-content="Tu compra fue realizada exitosamente">Confirmar</button>`);
+    $("#btnConfirmar").click(enviarCompra);
+}
+
+function enviarCompra() {
+    $.post(postURL,JSON.stringify(carrito), (respuesta,estado) =>{
+        if (estado == "success") {
+            
+        }
+    }) 
 }
 
 //FILTRA LOS PRODUCTOS
