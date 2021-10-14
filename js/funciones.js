@@ -50,13 +50,16 @@ function carritoUI(carrito) {
         )
     }
     $("#carritoFotocopiadoras").append(`<button type="button" id="btnConfirmar" class="btn btn-danger" data-bs-toggle="popover" title="¡Operacion exitosa!" data-bs-content="Tu compra fue realizada exitosamente">Confirmar</button>`);
+    $("#contenedorAlert").empty();
+    $("#contenedorAlert").append(`<div class="alert alert-success" id="alertCompra" role="alert">¡Tu compra fue realizada exitosamente!</div>`);
+    $("#alertCompra").hide();
     $("#btnConfirmar").click(enviarCompra);
 }
 
 function enviarCompra() {
     $.post(postURL,JSON.stringify(carrito), (respuesta,estado) =>{
         if (estado == "success") {
-            
+            $("#alertCompra").slideDown().delay(4000).slideUp();
         }
     }) 
 }
