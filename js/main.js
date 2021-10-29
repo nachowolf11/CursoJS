@@ -16,6 +16,6 @@ fotocopiadorasUI(fotocopiadoras,"#contenedorCards");
 
 $(".btnCompra").click(comprarFotocopiadora);
 
-$("input[name='filtro']").change(function () {
-    $(".producto").fadeOut("slow",filtrar)
-});
+//FILTRADO DE PRODUCTOS
+
+$("input[name='filtro']").change(filtrar);

@@ -1,3 +1,3 @@
 const fotocopiadoras = [];
-const carrito = [];
+let carrito = [];
 const postURL = "https://jsonplaceholder.typicode.com/posts";

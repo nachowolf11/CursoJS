@@ -28,8 +28,8 @@ ul{
 }
 
 .carrito{
-   button{
-      width: 280px;
+   #carritoBtn{
+      width: 350px;
    }
    ul{
       font-size: 1.2rem;
@@ -46,10 +46,13 @@ ul{
          margin-left: 1rem;
          margin-right: 1rem;
       }
-   }
-   #contenedorAlert{
-      font-size: 1.6rem;
-      font-family: 'Noto Sans KR', sans-serif;
+      #alertCompra{
+         font-size: 1.5rem;
+         font-family: 'Noto Sans KR', sans-serif;
+         margin-top: 1rem;
+         margin-left: 1rem;
+         margin-right: 1rem;
+      }
    }
 }
 

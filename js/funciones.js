@@ -27,6 +27,7 @@ function comprarFotocopiadora(e) {
 
     if (existe == undefined) {
         const seleccionado = fotocopiadoras.find(fotocopiadora => fotocopiadora.id == idFotocopiadora);
+        seleccionado.vaciar();
         carrito.push(seleccionado);
     } else {
         existe.agregarCantidad(1);
@@ -45,17 +46,29 @@ function carritoUI(carrito) {
             <span>${fotocopiadora.nombre}</span>
             <span>Cantidad: ${fotocopiadora.cantidad}</span>
             <span>Subtotal: ${fotocopiadora.subtotal()}</span>
+            <span><button id="${fotocopiadora.id}" type="button" class="btn-close btn-close-white btnEliminar" aria-label="Close"></button></span>
             </li>
             `
         )
     }
-    $("#carritoFotocopiadoras").append(`<button type="button" id="btnConfirmar" class="btn btn-danger" data-bs-toggle="popover" title="¡Operacion exitosa!" data-bs-content="Tu compra fue realizada exitosamente">Confirmar</button>`);
-    $("#contenedorAlert").empty();
-    $("#contenedorAlert").append(`<div class="alert alert-success" id="alertCompra" role="alert">¡Tu compra fue realizada exitosamente!</div>`);
+    //GENERACION DE BOTONES Y ALERTAS
+    $("#carritoFotocopiadoras").append(`<button type="button" id="btnConfirmar" class="btn btn-success" data-bs-toggle="popover" title="¡Operacion exitosa!" data-bs-content="Tu compra fue realizada exitosamente">Confirmar</button>`);
+    $("#carritoFotocopiadoras").append(`<button type="button" id="btnEliminarTodos" class="btn btn-danger">Eliminar todos</button>`);
+    $("#carritoFotocopiadoras").append(`<div class="alert alert-success" id="alertCompra" role="alert">¡Tu compra fue realizada exitosamente!</div>`);
     $("#alertCompra").hide();
+    //CONFIRMAR COMPRA
     $("#btnConfirmar").click(enviarCompra);
+    //ELIMINAR PRODUCTOS SELECCIONADOS
+    $(".btnEliminar").click(eliminarFotocopiadora);
+    //ELIMINAR TODOS LOS PRODUCTOS Y ESCONDER BOTONES
+    $("#btnEliminarTodos").click(function () {
+        carrito.length = 0;
+        carritoUI(carrito);
+        hideBtnCarrito();
+    });
 }
 
+//ENVIAR COMPRA AL SERVIDOR
 function enviarCompra() {
     $.post(postURL,JSON.stringify(carrito), (respuesta,estado) =>{
         if (estado == "success") {
@@ -85,4 +98,17 @@ function filtrar() {
         }   
     }
 
+}
+
+//ELIMINAR PRODUCTOS
+function eliminarFotocopiadora(e) {
+    carrito = carrito.filter(fotocopiadora => fotocopiadora.id != e.target.id);
+    carritoUI(carrito);
+    if(carrito.length == 0){
+        hideBtnCarrito()};
+}
+//ESCONDER BOTONES
+function hideBtnCarrito() {
+    $("#btnConfirmar").hide();
+    $("#btnEliminarTodos").hide();
 }

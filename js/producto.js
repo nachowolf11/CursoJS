@@ -12,6 +12,9 @@ class Fotocopiadora {
     agregarCantidad(valor){
         this.cantidad += valor;
     }
+    vaciar(){
+        this.cantidad = 1;
+    }
     subtotal(){
         return this.cantidad * this.precio;
     }

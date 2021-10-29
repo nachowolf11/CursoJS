@@ -11974,8 +11974,8 @@ ul {
   margin-top: 1rem;
 }
 
-.carrito button {
-  width: 280px;
+.carrito #carritoBtn {
+  width: 350px;
 }
 
 .carrito ul {
@@ -11998,9 +11998,12 @@ ul {
   margin-right: 1rem;
 }
 
-.carrito #contenedorAlert {
-  font-size: 1.6rem;
+.carrito ul #alertCompra {
+  font-size: 1.5rem;
   font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .logo {
