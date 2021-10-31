@@ -60,19 +60,15 @@ function carritoUI(carrito) {
     $("#btnConfirmar").click(enviarCompra);
     //ELIMINAR PRODUCTOS SELECCIONADOS
     $(".btnEliminar").click(eliminarFotocopiadora);
-    //ELIMINAR TODOS LOS PRODUCTOS Y ESCONDER BOTONES
-    $("#btnEliminarTodos").click(function () {
-        carrito.length = 0;
-        carritoUI(carrito);
-        hideBtnCarrito();
-    });
+    //ELIMINAR TODOS LOS PRODUCTOS
+    $("#btnEliminarTodos").click(eliminarTodos);
 }
 
 //ENVIAR COMPRA AL SERVIDOR
 function enviarCompra() {
     $.post(postURL,JSON.stringify(carrito), (respuesta,estado) =>{
         if (estado == "success") {
-            $("#alertCompra").slideDown().delay(4000).slideUp();
+            $("#alertCompra").slideDown().delay(4000).slideUp(eliminarTodos);
         }
     }) 
 }
@@ -107,6 +103,14 @@ function eliminarFotocopiadora(e) {
     if(carrito.length == 0){
         hideBtnCarrito()};
 }
+
+//ELIMINAR TODOS LOS PRODUCTOS
+function eliminarTodos() {
+        carrito.length = 0;
+        carritoUI(carrito);
+        hideBtnCarrito();
+}
+
 //ESCONDER BOTONES
 function hideBtnCarrito() {
     $("#btnConfirmar").hide();

@@ -1,0 +1,110 @@
+[
+  {
+    "id": 5,
+    "tipo": "fotocopiadora",
+    "nombre": "RICOH 500",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 53000,
+    "img": "imagenes/productos/fotocopiadora.jpg"
+  },
+  {
+    "id": 6,
+    "tipo": "fotocopiadora",
+    "nombre": "RICOH 5500",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 40000,
+    "img": "imagenes/productos/fotocopiadora.jpg"
+  },
+  {
+    "id": 7,
+    "tipo": "fotocopiadora",
+    "nombre": "RICOH 5000",
+    "stock": 3,
+    "estado": "Usada",
+    "precio": 450000,
+    "img": "imagenes/productos/fotocopiadora.jpg"
+  },
+  {
+    "id": 8,
+    "tipo": "fotocopiadora",
+    "nombre": "RICOH 550",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 350000,
+    "img": "imagenes/productos/fotocopiadora.jpg"
+  },
+  {
+    "id": 9,
+    "tipo": "repuesto",
+    "nombre": "CUCHILLAS",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 12000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 10,
+    "tipo": "repuesto",
+    "nombre": "TONER",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 3000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 11,
+    "tipo": "repuesto",
+    "nombre": "LED",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 20000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 12,
+    "tipo": "repuesto",
+    "nombre": "LECTOR",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 40000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 13,
+    "tipo": "repuesto",
+    "nombre": "BANDEJA",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 10000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 14,
+    "tipo": "repuesto",
+    "nombre": "TAPA",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 30000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 15,
+    "tipo": "repuesto",
+    "nombre": "FUENTE",
+    "stock": 3,
+    "estado": "Nuevo",
+    "precio": 80000,
+    "img": "imagenes/productos/repuesto.jpg"
+  },
+  {
+    "id": 19,
+    "tipo": "fotocopiadora",
+    "nombre": "RICOH 1000",
+    "stock": 3,
+    "estado": "Usada",
+    "precio": 650000,
+    "img": "imagenes/productos/fotocopiadora.jpg"
+  }
+]
